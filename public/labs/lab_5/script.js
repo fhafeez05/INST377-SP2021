@@ -16,7 +16,7 @@ async function dataHandler(mapFromLeaflet) {
   const form = document.querySelector("#form");
   const search = document.querySelector("#search");
   const targetList = document.querySelector(".target-list");
-  // const replyMessage = document.querySelector('.reply-message');
+
   const request = await fetch(
     "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"
   );
