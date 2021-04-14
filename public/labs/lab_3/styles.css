@@ -1,96 +1,66 @@
 /* Add some css styles based on the tutorial at javascript.info: introduction to browser events
  https://javascript.info/introduction-browser-events */
- * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  html {
-    font-size: 10px;
-    background: rgb(102, 80, 102);
-  }
-  
-    
-
-  h1{
-      text-align: center;
-      color: cornsilk;
-      font-size: 2.5em;
-
+ html {
+  padding: 10px;
+  font-size: 10px;
+  background: rgb(102, 80, 102);
   }
 
-  /* carousel unit block */
-  .carousel {
-    align-items: center;
-    display: flex;
-    margin: 2rem auto;
-    overflow: hidden;
-    position: relative;
-    width: 300px;
-    background: rgb(70, 70, 62);
-  }
-    .carousel_images {
-      display: flex;
-      transform: translateX(0);
-      transition: transform 0.25s;
-    } 
-      .carousel img {
-        width: 100;
-      }
-    
-    
-    button {
-      background: teal;
-      border: 0;
-      border-radius: 50%;
-      color: white;
-      cursor: pointer;
-      font-size: 1.5rem;
-      font-weight: bold;
-      height: 3rem;
-      opacity: 0.25;
-      position: absolute;
-      transition: opacity 0.25s;
-      width: 3rem;
-      z-index: 1;
-    }
-      button.carousel_previous {
-        left: 5px;
-      }
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -235px;
+}
+
+.carousel {
+  position: relative;
+  width: 398px;
+  padding: 10px 40px;
+}
+
+.carousel img {
+  width: 130px;
+  height: 130px;
+  display: block;
+}
+
+.button {
+  background: teal;
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  height: 3rem;
+  opacity: 0.25;
+  position:absolute;
+  transition: opacity 0.25s;
+  top: 60px;   
       
-      button.carousel_next {
-        right: 5px;
-      }
-      
-    button:hover {
-        opacity: 0.5;
-      }
+}
 
-      ul {
-        list-style: none;
-        width: 800px;
-        height: 150px;
-        padding: 0;
-        margin: 0;
-        font-size: 0;
-    }
-  
-    ul img {
-      display: block;
-      height: 110px;
-      
-    }
-  
-    ul li {
-        display: inline-block;
-    }
-  
-  
+.back {
+  left: 7px;
+}
 
+.next {
+  right: 7px;
+}
 
+.gallery {
+  width: 380px;
+  overflow: hidden;
+}
 
+.gallery ul {
+  width: 1000px;
+  padding: 0;
+  transition: margin-left 250ms;
+  font-size: 0px;
+}
 
-
-
-
+.gallery li {
+  display: inline-block;
+}

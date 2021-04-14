@@ -1,21 +1,19 @@
-const carouselImages = document.querySelector('.carousel_images');
-const carouselButtons = document.querySelectorAll('.carousel_button');
-const numberOfImages = document.querySelectorAll('.carousel_images img').length;
-let imageIndex = 1;
-let translateX = 0;
- 
-carouselButtons.forEach(button => {
-  button.addEventListener('click', (event) => {
-    if (event.target.id === 'previous') {
-      if (imageIndex !== 1) {
-        imageIndex--;
-        translateX += 300;
-      }
-    } elseif (imageIndex !== numberOfImages) {
-            imageIndex++;
-            translateX -= 300;
-      }
-    }
-       carouselImages.style.transform = `translateX(${translateX}px)`
-   });
- });
+const width = 130;
+const count = 3;
+
+const list = carousel.querySelector('ul');
+const listElems = carousel.querySelectorAll('li');
+
+let position = 0;
+
+carousel.querySelector('.back').onclick = function () {
+  position += width * count;
+  position = Math.min(position, 0);
+  list.style.marginLeft = `${position}px`;
+};
+
+carousel.querySelector('.next').onclick = function () {
+  position -= width * count;
+  position = Math.max(position, -width * (listElems.length - count));
+  list.style.marginLeft = `${position}px`;
+};
